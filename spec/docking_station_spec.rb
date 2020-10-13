@@ -8,4 +8,18 @@ require "Docking_Station_1"
       bike = subject.release_bike
       expect(bike).to be_working
     end
+
+    it "docks a bike" do
+      bike = Bike.new
+
+      expect(subject.dock(bike)).to eq bike
+    end
+
+
+    it "returns docked bikes" do
+     bike = Bike.new
+     #Set up assert
+     subject.dock(bike)
+     expect(subject.bike).to eq bike
+    end
   end
